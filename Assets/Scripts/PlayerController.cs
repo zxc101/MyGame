@@ -14,7 +14,7 @@ public class PlayerController : MonoBehaviour {
         rigidbody = GetComponent<Rigidbody2D>();
     }
 	
-	void FixedUpdate () {
+	void Update () {
         if (Input.GetKey(KeyCode.A))
         {
             transform.rotation = Quaternion.Euler(0, 180, 0);
@@ -25,9 +25,9 @@ public class PlayerController : MonoBehaviour {
             transform.rotation = Quaternion.Euler(0, 0, 0);
             transform.Translate(Vector2.right * Time.deltaTime * speed, Space.World);
         }
-        if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.Space))
         {
-            rigidbody.AddForce(new Vector2(0, 5000));
+            rigidbody.AddForce(new Vector2(0, 1000) * jumpForce);
         }
     }
 }

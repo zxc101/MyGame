@@ -9,7 +9,7 @@ public class BazookaController : MonoBehaviour {
 	void Start () {
 	}
 	
-	void FixedUpdate() {
+	void Update() {
         if (Input.GetMouseButtonDown(0))
         {
             Instantiate(rocket, transform.position, transform.rotation);
